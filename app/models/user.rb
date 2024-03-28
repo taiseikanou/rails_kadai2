@@ -5,4 +5,10 @@ class User < ApplicationRecord
   has_many :reservations
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+
+  has_many :reservations
+
+
+
+
 end
