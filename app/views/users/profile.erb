@@ -1,7 +1,7 @@
 <div class="container">
 
     <div class="show">
-    <p><%= link_to "プロフィール編集", edit_user_path(current_user) %></p>
+    <%= image_tag current_user.get_profile_image(100,100) %>
     <table class="table table-bordered DetailTable">
       <tbody>
         <tr>

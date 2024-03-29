@@ -20,7 +20,12 @@
     <tbody>
       <% @reservations.each do |reservation| %>
         <tr>
-          <td></td>
+        <tr>
+        <% if reservation.room.image.attached? %>
+          <td><%= image_tag reservation.room.image, size: "200x200" %></td>
+          <% else %>
+          <td><%= image_tag 'no_image', size: "100x100" %></td>
+        <% end %>
           <td><%= reservation.room.room_name %></td>
           <td><%= reservation.room.room_detail %></td>
           <td><%= reservation.room.price %></td>
