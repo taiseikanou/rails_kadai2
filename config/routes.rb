@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   get 'users/account'
   get 'users/profile'
   get 'rooms/own'
+  get 'reservations/confirm'
   resources :reservations
   resources :rooms
   resources :users

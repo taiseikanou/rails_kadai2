@@ -1,1 +1,36 @@
+<div class="container">
+  <h3>予定一覧</h3>
 
+  <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th>画像</th>
+        <th>施設名</th>
+        <th>紹介文</th>
+        <th>料金</th>
+        <th>合計料金</th>
+        <th>チェックイン</th>
+        <th>チェックアウト</th>
+        <th>予約確定日時</th>
+        <th>再予約</th>
+        <th>予約を削除</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @reservations.each do |reservation| %>
+        <tr>
+          <td></td>
+          <td><%= reservation.room.room_name %></td>
+          <td><%= reservation.room.room_detail %></td>
+          <td><%= reservation.room.price %></td>
+          <td><%= reservation.check_in.to_s(:datetime_jp) %></td>
+          <td><%= reservation.check_out.to_s(:datetime_jp) %></td>
+          <td><%= reservation.room.updated_at.to_s(:datetime_jp)%></td>
+          <td>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
