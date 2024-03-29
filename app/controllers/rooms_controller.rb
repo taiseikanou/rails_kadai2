@@ -47,7 +47,7 @@ end
   private
 
   def room_params
-    params.require(:room).permit(:room_name,:room_detail,:price,:address,:area)
+    params.require(:room).permit(:room_name,:room_detail,:price,:address,:area,:image)
   end
 
 end
