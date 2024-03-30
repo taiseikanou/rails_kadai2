@@ -1,0 +1,40 @@
+
+<%= form_with url: rooms_path, method: :get do |form| %>
+    <%= form.text_field :search, placeholder: "Search rooms..." %>
+    <%= form.submit "Search" %>
+  <% end %>
+
+  <% if @rooms.present? %>
+  <table>
+    <thead>
+      <tr>
+        <th>Image</th>
+        <th>Name</th>
+        <th>Detail</th>
+        <th>Price</th>
+        <th>Updated At</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @rooms.each do |room| %>
+        <tr>
+          <% if room.image.attached? %>
+            <td><%= image_tag room.image, size: "100x100" %></td>
+          <% else %>
+            <td><%= image_tag 'no_image', size: "100x100" %></td>
+          <% end %>
+          <td><%= room.room_name %></td>
+          <td><%= room.room_detail %></td>
+          <td><%= room.price %></td>
+          <td><%= room.address %></td>
+          <td><%= room.updated_at.to_s(:datetime_jp) %></td>
+          <td>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% elsif params[:search].present? %>
+  <p>No rooms found.</p>
+<% end %>

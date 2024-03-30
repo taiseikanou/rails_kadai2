@@ -1,0 +1,11 @@
+<h1>Potepan Shareでまだ体験したことのない旅をしよう</h1>
+<%= form_with url: rooms_path, method: :get do |form| %>
+    <%= form.text_field :search %>
+    <%= form.submit 'Search', name: nil %>
+  <% end %>
+
+  <%= link_to "Search in Tokyo", rooms_path(address: "東京"), method: :get %>
+<%= link_to "Search in Kyoto", rooms_path(address: "京都"), method: :get %>
+<%= link_to "Search in Osaka", rooms_path(address: "大阪"), method: :get %>
+<%= link_to "Search in Hokkaido", rooms_path(address: "北海道"), method: :get %>
+
