@@ -7,7 +7,6 @@
         <th>画像</th>
         <th>施設名</th>
         <th>紹介文</th>
-        <th>料金</th>
         <th>合計料金</th>
         <th>チェックイン</th>
         <th>チェックアウト</th>
@@ -29,11 +28,12 @@
           <td><%= reservation.room.room_name %></td>
           <td><%= reservation.room.room_detail %></td>
           <td><%= reservation.room.price %></td>
+          <td><%= reservation.room.price %></td>
           <td><%= reservation.check_in.to_s(:datetime_jp) %></td>
           <td><%= reservation.check_out.to_s(:datetime_jp) %></td>
-          <td><%= reservation.room.updated_at.to_s(:datetime_jp)%></td>
-          <td>
-          </td>
+          <td><%= reservation.room.updated_at.to_s(:datetime)%></td>
+          <td><%= link_to "編集", [:edit, reservation] %></td>
+          <td><%= link_to "削除", reservation_path(reservation), method: :delete, data: { confirm: "本当に削除しますか？" } %></td>
         </tr>
       <% end %>
     </tbody>

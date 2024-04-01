@@ -26,12 +26,8 @@
           <td><%= room.room_detail %></td>
           <td><%= room.price %></td>
           <td><%= room.updated_at.to_s(:datetime_jp)%></td>
-          <td>
-            <div class="btn-group" role="group">
-              <%= link_to "編集", [:edit, room], class: "btn btn-warning btn-sm" %>
-              <%= link_to "削除", room_path(room), method: :delete, data: { confirm: "本当に削除しますか？" }, class: "btn btn-danger btn-sm" %>
-            </div>
-          </td>
+          <td><%= link_to "編集", [:edit, room] %></td>
+          <td><%= link_to "削除", room_path(room), method: :delete, data: { confirm: "本当に削除しますか？" } %></td>
         </tr>
       <% end %>
     </tbody>
